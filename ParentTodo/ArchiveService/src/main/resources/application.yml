@@ -1,0 +1,20 @@
+server:
+  port: 8097
+spring:
+  application:
+    name: archive-service
+  data:
+    mongodb:
+      database: archive
+      uri: mongodb://localhost:27017
+  error:
+    include-message: always
+
+
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka

@@ -1,0 +1,22 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: todo-service
+  data:
+    mongodb:
+      database: todosDetails
+      uri: mongodb://localhost:27017
+  error:
+    include-message: always
+servlet:
+  multipart:
+    max-file-size: 10MB
+    max-request-size: 10MB
+    
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
