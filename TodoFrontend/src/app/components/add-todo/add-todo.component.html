@@ -1,0 +1,177 @@
+<!-- ]
+<div class = "container">
+    
+    <mat-card class = "add-todo-card">
+      <h1>Add Todo</h1>
+     
+      
+    <form [formGroup] = "todoAddForm" (ngSubmit) = "addTodoTask()">
+          
+     
+       <mat-form-field class = "form-field form-input-field" appearance="outline">
+            <input type="text" matInput placeholder="Task Name" formControlName = "todoTitle">
+        </mat-form-field>
+       
+        <mat-form-field   class = "form-field form-input-field" appearance="outline">
+            <input type="text" matInput placeholder="Description" formControlName = "todoDesc">
+        </mat-form-field>
+       
+        
+        <div class = "mat-chip-div">
+        <mat-chip-listbox aria-label="Fish selection">
+          <mat-chip-option (click) = "setPriortyOption()">Priority</mat-chip-option>
+          <mat-chip-option (click) = "openCatForm()">Categories Your Task</mat-chip-option>
+          <mat-chip-option (click) = "openReminderDateOption()">Set Due Date</mat-chip-option>
+        </mat-chip-listbox>
+       </div>
+        
+       ]
+        <div *ngIf = "openPriorityInput">
+        <mat-form-field appearance="outline" class = "form-input-field form-field">
+          <mat-label>Priority</mat-label>
+          <mat-select name="priority" formControlName = "priorities">
+            <mat-option *ngFor = "let priority of priorities" value="{{priority}}">
+              {{priority}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+       </div>
+
+       
+       <div class = "form-field category-div" *ngIf = "showCatForm">
+
+   
+        <form [formGroup] = "categoryForm" (ngSubmit) = "addCategory()" class = "add-category-form">
+
+        
+        <mat-form-field appearance="outline">
+          <input type="text" matInput placeholder="Create New" formControlName = "categoryName">
+        </mat-form-field>
+        </form>
+
+        
+        <mat-form-field appearance="outline" class = "add-category-form">
+          <mat-label>Existing One</mat-label>
+          <mat-select name="categoryName" formControlName = "categoryName">
+            <mat-option *ngFor = "let cat of availableCategory" value="{{cat}}">
+            {{cat}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+        
+        <div *ngIf = "showReminderDate">
+        <div class = "icon-div">
+        <a (click) = "openDueDateOption()"><mat-icon class = "icon">event</mat-icon>Due Date</a>
+      
+          <div *ngIf = "showDateOption" class = "dueDateOption-div">
+            <div>
+            <input type="datetime-local" matInput formControlName = "dueDate" format="dd-MM-yyyy hh:mm a">
+            </div>
+            </div>
+           
+         
+        </div>
+      </div>
+        
+        <button mat-button class = "reset-btn-todo-add add-btn" type = "reset">Reset</button>
+        <button mat-button class = "add-btn-todo-add add-btn" type="submit" [disabled] = "!todoAddForm.valid">Add Task</button>
+    </form>
+</mat-card>
+</div> -->
+
+<section>
+  <!-- main container -->
+<div class = "container">
+  <!-- showing add todo form inside card -->
+ <mat-card class = "add-todo-card">
+   <h1>Add Todo</h1>
+  
+   <!-- defining form to add todos -->
+ <form [formGroup] = "todoAddForm" (ngSubmit) = "addTodoTask()">
+       
+   <!-- field for adding title of todos -->
+    <mat-form-field class = "form-field form-input-field" appearance="outline">
+         <input type="text" matInput placeholder="Task Name" formControlName = "todoTitle">
+     </mat-form-field>
+     <!-- field for adding description of todos -->
+     <mat-form-field   class = "form-field form-input-field" appearance="outline">
+         <input type="text" matInput placeholder="Description" formControlName = "todoDesc">
+     </mat-form-field>
+    
+     <!-- defining mat-chip to show priority category and due date -->
+     <div class = "mat-chip-div">
+     <mat-chip-listbox aria-label="Fish selection">
+       <mat-chip-option (click) = "setPriortyOption()">
+        <i class="fa fa-level-up" aria-hidden="true"></i>
+        Priority</mat-chip-option>
+      </mat-chip-listbox>
+
+      <mat-chip-listbox aria-label="Fish selection" class = "mat-chip">
+      <mat-chip-option (click) = "openCatForm()">
+        <i class="fa-sharp fa-solid fa-shapes"></i>
+        Categories Your Task</mat-chip-option>
+     </mat-chip-listbox>
+
+        <mat-chip-listbox aria-label="Fish selection" class = "mat-chip">
+         <mat-chip-option (click) = "openReminderDateOption()">
+          <i class="fa fa-calendar icon" aria-hidden="true"></i>
+          Set Due Date</mat-chip-option>
+        </mat-chip-listbox>
+    </div>
+     
+    <!-- div to show priority input -->
+     <div *ngIf = "openPriorityInput">
+     <mat-form-field appearance="outline" class = "form-input-field form-field">
+       <mat-label>Priority</mat-label>
+       <mat-select name="priority" formControlName = "priorities">
+         <mat-option *ngFor = "let priority of priorities" value="{{priority}}">
+           {{priority}}
+         </mat-option>
+       </mat-select>
+   </mat-form-field>
+    </div>
+
+    <!-- div to show add category form -->
+    <div class = "form-field category-div" *ngIf = "showCatForm">
+
+     <!-- form to add category -->
+     <form [formGroup] = "categoryForm" (ngSubmit) = "addCategory()" class = "add-category-form">
+
+       <!-- field to adding category name -->
+     <mat-form-field appearance="outline">
+       <input type="text" matInput placeholder="Create New" formControlName = "categoryName">
+     </mat-form-field>
+     </form>
+
+     <!-- field to select category which is already available -->
+     <mat-form-field appearance="outline" class = "add-category-form">
+       <mat-label>Existing One</mat-label>
+       <mat-select name="categoryName" formControlName = "categoryName">
+         <mat-option *ngFor = "let cat of availableCategory" value="{{cat}}">
+         {{cat | titlecase}}
+         </mat-option>
+       </mat-select>
+     </mat-form-field>
+   </div>
+   
+     <!-- div to show reminder date option -->
+     <div *ngIf = "showReminderDate">
+         <div class = "date-time-div">
+          <input class = "date-time-input-field"
+           type="datetime-local" id = "demo"
+            #input (change) = "onChange(input.value)"
+             [min] = "minDate" [(ngModel)] = "values" 
+             formControlName = "dueDate" 
+             format="dd-MM-yyyy hh:mm a">
+         </div>
+     </div>
+      <!-- buttons for reset and submit add todo form -->
+     <button mat-button class = "reset-btn-todo-add add-btn" type = "reset">Reset</button>
+     <button mat-button class = "add-btn-todo-add add-btn" type="submit"
+      [disabled] = "!todoAddForm.valid">Add Task</button>
+ </form>
+</mat-card>
+</div>
+
+</section>

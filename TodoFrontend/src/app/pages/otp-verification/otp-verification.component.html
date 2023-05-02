@@ -1,0 +1,49 @@
+
+
+<!-- <mat-card class = "myCard ">
+    
+    <form [formGroup] = "otpForm" >
+ 
+        <mat-form-field class = "formField">
+             <input type="text" formControlName = "email" name = "email" matInput placeholder="Your Email Id">
+        </mat-form-field>
+
+        <mat-form-field class = "formField">
+            <input type="text" formControlName = "otp" name = "otp" matInput placeholder="OTP">
+       </mat-form-field>
+
+       <div class="text-center">
+        <button mat-raised-button color = "primary" type="submit" (click)="sendOtp()" class="btn">Send Otp</button>
+        <button mat-raised-button color = "accent" type="submit" (click)="verifyOtp()" class="btn" >Verify</button>
+       </div>
+
+    </form>   
+</mat-card> -->
+
+<div>
+    <mat-toolbar color = "primary">
+        <mat-toolbar-row fxLayout = "row">
+           <span>Enter Email</span>
+           <span class = "spacer"></span>
+           <button class = "mat-dialog-close" mat-icon-button mat-dialog-close>
+            <mat-icon>close</mat-icon>
+           </button>
+        </mat-toolbar-row>
+        </mat-toolbar>
+    <mat-card class = "form-card">
+            <mat-form-field class = "form-field" appearance = "outline">
+                <input type="email" matInput placeholder="Enter Email Id" #email>
+            </mat-form-field>
+            <mat-form-field appearance = "outline">
+                <input type="number" matInput placeholder="Provide OTP" (input) = "enterOtp(otp.value)" [disabled] = "!otp1" #otp>
+            </mat-form-field>
+            <div class = "btn-div">
+            <div class = "forgot-btn">
+                <button mat-raised-button (click) = "generateOtp(email.value)">Send Otp</button>
+            </div>
+            <div class = "verify-otp-btn">
+               <button (click)="openDialog('0ms', '0ms')" [disabled] = "!otp2" mat-raised-button color = "accent">Verify</button>
+            </div>
+            </div>
+    </mat-card>
+</div>

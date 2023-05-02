@@ -1,0 +1,348 @@
+/* setting responsiveness for xsmall devices */
+:host.XSmall .section{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.XSmall .article, .second-article{
+  margin: 30px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+:host.XSmall .third-article{
+ margin:30px auto;
+ padding: 5px;
+ width: 100%;
+}
+
+:host.XSmall .left-section
+{
+  margin: 30px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+:host.XSmall .left-section-1{
+  margin: 30px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+:host.XSmall .right-section-1{
+  margin: 30px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+
+:host.XSmall .thumbnail{
+  margin: 30px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+:host.XSmall .thumbnail img{
+  margin: auto;
+  padding: 5px;
+  width: 100%;
+}
+
+:host.XSmall .right-section{
+  margin:auto;
+  padding: 5px;
+  width: 100%;
+}
+
+:host.XSmall .heading-h1{
+  font-size: 1.3rem;
+  line-height: 25px;
+}
+
+:host.XSmall .left-section-2{
+  margin:30px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+
+:host.XSmall .right-section-2{
+  margin:30px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+:host.XSmall .left-section-2 .thumbnail-1 img{
+  margin:30px auto;
+  padding: 5px;
+  width: 100%;
+}
+
+:host.XSmall .right-section-2 button{
+  background: var(--dark-gray);
+  color:white;
+}
+
+
+
+/* setting responsiveness for small devices */
+
+:host.small .section{
+  margin: auto;
+  padding: auto;
+  width: 100%;
+}
+
+:host.small .article, .second-article{
+margin: 30px auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .third-article{
+margin:30px auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .left-section
+{
+margin: 30px auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .left-section-1{
+margin: 30px auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .right-section-1{
+margin: 30px auto;
+padding: 5px;
+width: 100%;
+}
+
+
+:host.small .thumbnail{
+margin: 30px auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .thumbnail img{
+margin: auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .right-section{
+margin:auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .heading-h1{
+font-size: 1.3rem;
+line-height: 25px;
+}
+
+:host.small .left-section-2{
+margin:30px auto;
+padding: 5px;
+width: 100%;
+}
+
+
+:host.small .right-section-2{
+margin:30px auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .left-section-2 .thumbnail-1 img{
+margin:30px auto;
+padding: 5px;
+width: 100%;
+}
+
+:host.small .right-section-2 button{
+  background: var(--dark-gray);
+  color:white;
+}
+
+
+
+/* setting responsiveness for medium devices */
+
+:host.medium .section{
+  margin: auto;
+  padding: auto;
+  width: 100%;
+}
+
+:host.medium .article, .second-article{
+    margin: 30px auto;
+    padding: 5px;
+    width: 100%;
+    }
+    
+    :host.medium .third-article{
+    margin:30px auto;
+    padding: 5px;
+    width: 100%;
+    }
+    
+    :host.medium .left-section
+    {
+    margin: 30px auto;
+    padding: 5px;
+    width: 50%;
+    }
+    
+    :host.medium .left-section-1{
+    margin: auto;
+    padding: 5px;
+    width: 40%;
+    }
+    
+    :host.medium .right-section-1{
+    margin: 30px auto;
+    padding: 5px;
+    width: 50%;
+    }
+    
+    
+    :host.medium .thumbnail{
+    margin: 30px auto;
+    padding: 5px;
+    width: 100%;
+    }
+    
+    :host.medium .thumbnail img{
+    margin: auto;
+    padding: 5px;
+    width: 100%;
+    }
+    
+    :host.medium .right-section{
+    margin:auto;
+    padding: 5px;
+    width: 50%;
+    }
+    
+    :host.medium .heading-h1{
+    font-size: 1.3rem;
+    line-height: 25px;
+    }
+    
+    :host.medium .left-section-2{
+    margin:30px auto;
+    padding: 5px;
+    width: 50%;
+    }
+    
+    
+    :host.medium .right-section-2{
+    margin:auto;
+    padding: 10px;
+    width: 50%;
+    }
+    
+    :host.medium .left-section-2 .thumbnail-1 img{
+    margin:30px auto;
+    padding: 5px;
+    width: 100%;
+    }
+    
+    :host.medium .right-section-2 button{
+      background: var(--dark-gray);
+      color: white;
+    }
+    
+    
+    
+    /* responsiveness for large devices */
+    
+    :host.large .article{
+        width: 100%;
+        margin:70px auto;   
+    }
+    
+    :host.large .left-section{
+      margin-left: 50px;
+      
+    }
+    :host.large .right-section{
+      margin-top: 200px;
+      width: 500px;
+      
+    }
+    
+    :host.large .thumbnail img{
+      margin-top:10px;
+      margin-left: 30px;
+      width: 550px;
+    }
+    
+    :host.large .heading-h1{
+      font-size: 30px;
+      font-weight: 500;
+      margin-top: -10px;
+    }
+    
+    :host.large .para{
+      color: rgb(132, 121, 121);
+      text-align: justify;
+      font-size: 16px;
+      margin-top: -3px;
+    }
+    
+    :host.large .second-article{
+      width: 100%;
+      margin: 70px auto;
+    }
+    
+    :host.large .left-section-1{
+      margin: auto;
+      padding: 10px;
+      width: 50%;
+    }
+    
+    :host.large .right-section-1{
+      margin: auto;
+      padding: 10px;
+      width: 50%;
+    }
+    
+    :host.large .headding-1{
+      font-size: 30px;
+      font-weight: 500;
+    }
+    
+    :host.large .third-article{
+        width: 90%;
+        margin:70px auto;
+    }
+    
+    :host.large .right-section-2{
+        width: 500px;
+        margin-top: 350px;
+        margin-left: 50px;
+      }
+    
+      :host.large .thumbnail-1 img{
+        margin-top: 10px;
+        width: 600px;
+      }
+    
+      :host.large .right-section-2 button{
+        background: var(--dark-gray);
+        color: white;
+      }
+
+
+
+ 

@@ -1,0 +1,63 @@
+<div [class.menu_icon_class] = "menu_icon_variable" (click)="openMenu()">
+  <div class="menu_icon">
+    <span></span>
+    <span></span>
+    <span></span>
+   </div>
+  </div>
+  <section class = "section" [class.menuClass] = "menuVariable">
+    <div>
+        <!-- card which is having sidenav -->
+        <mat-card class = "sidenav-card">
+      
+          <!-- action list to show icon and button -->
+          <mat-action-list>
+            <div mat-subheader><h2>Menu</h2></div>
+      
+            <!-- div for defining inbox option -->
+            <div>
+            <button mat-list-item routerLink = "/userDashboard/taskDetails" class = "btn-adjust">
+              <i mat-list-icon class="icon-adjust fa fa-inbox inbox" aria-hidden="true"></i>Inbox</button>
+            </div>
+      
+            <!-- div for defining add task option -->
+             <div class = "inbox-div">
+              <button mat-list-item routerLink = "/userDashboard/addTodo"  class = "btn-adjust">
+                <i  class="fa-solid fa-plus icon-adjust"></i> 
+                Add Todos</button>
+              </div>
+              
+              <!-- div for defining priority option option -->
+              <div class = "inbox-div">
+                <button mat-list-item routerLink = "/userDashboard/show-priority" class = "btn-adjust" (click) = "showPriorityDiv()">
+                  <i mat-list-icon class="fa fa-level-up icon-adjust" aria-hidden="true"></i>
+                    Priorties</button>
+               </div>
+
+                 <!-- div for defining archieve option -->
+                 <div class = "inbox-div">
+                  <button mat-list-item routerLink = "/userDashboard/completed" class = "btn-adjust">
+                    <i mat-list-icon class="fa-solid fa-square-check icon-adjust"></i>
+                    Completed Task</button>
+                 </div>
+
+               <!-- div to show completed task option -->
+
+               <div class = "inbox-div">
+                <button mat-list-item routerLink = "/userDashboard/archivedItem"  class = "btn-adjust">
+                  <i mat-list-icon class="fa-solid fa-box-archive icon-adjust"></i>
+                  Archived</button>
+                </div>
+  
+               <!-- div for defining category option -->
+               <div class = "inbox-div" (click) = "openCategoryDiv()">
+                <button mat-list-item routerLink = "/userDashboard/add-category" class = "btn-adjust"> 
+                  <i mat-list-icon class="fa-sharp fa-solid fa-shapes icon-adjust"></i>
+                  Add Category</button>
+               </div>
+           </mat-action-list>
+      </mat-card>
+      </div>
+      
+       
+</section>

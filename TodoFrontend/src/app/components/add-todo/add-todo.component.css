@@ -1,0 +1,232 @@
+:host.XSmall .container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.XSmall .add-todo-card{
+    width: 100%;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: none;
+}
+
+:host.XSmall .form-field{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+:host.XSmall form{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .mat-chip-div{
+    width: 100%;
+    margin: -20px auto;
+    padding: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+:host.XSmall .mat-chip-div mat-chip-option{
+    z-index: 0;
+}
+
+:host.XSmall .mat-chip{
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .category-div{
+    margin: 25px auto;
+    padding: auto;
+    width: 100%;
+    display: block;
+}
+
+:host.XSmall .show-priority{
+    width: 100%;
+    padding: auto;
+    margin: 35px auto;
+}
+
+:host.XSmall .add-category-form{
+    width: 100%;
+}
+
+ 
+:host.XSmall .add-btn{
+    z-index: 0;
+}
+
+:host.small .container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.small .add-todo-card{
+    width: 100%;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: none;
+}
+
+:host.small .form-field{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+:host.small form{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .mat-chip-div{
+    width: 100%;
+    margin: -20px auto;
+    padding: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+:host.small .mat-chip{
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .category-div{
+    margin: 25px auto;
+    padding: auto;
+    width: 100%;
+    display: block;
+}
+
+:host.small .show-priority{
+    width: 100%;
+    padding: auto;
+    margin: 25px auto;
+}
+
+:host.small .mat-chip-div mat-chip-option{
+    z-index: 0;
+}
+
+:host.small .add-btn{
+    z-index: 0;
+}
+
+
+.container{
+    margin-top: -40px;
+}
+
+/* organizing card of add todo */
+.add-todo-card{
+    border-radius: 20px;
+    width: 600px;
+    padding: 30px;
+    margin:auto;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+/* setting width of form field */
+.form-field{
+    width: 550px;
+} 
+
+/* setting hover functionality to reset button */
+
+.reset-btn-todo-add:hover{
+    background: gray;
+    color:white;
+}
+
+/* setting hover funtionality to add todo button */
+
+.add-btn-todo-add:hover{
+    background: rgb(148, 148, 243);
+    color: white;
+}
+
+/* setting margin to add and reset button */
+
+.add-btn{
+    margin: 20px 0 20px 20px;
+}
+
+/* setting functionality for category input */
+
+.category-div{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* setting width for adding category */
+
+.add-category-form{
+    width:275px;
+}
+
+/* styling div which is showing due date */
+.dueDateOption-div{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 80px;
+}
+
+/* setting up margin in mat-chip component div */
+ .mat-chip-div{
+    display: flex;
+    margin-top: -20px;
+}
+.mat-chip-div  .mat-chip{
+ margin-left: 5px;
+}
+
+/* styling date-time div */
+.date-time-div{
+width: 200px;
+}
+
+/* styling icon div */
+
+.icon-div{
+    margin-top: 20px;
+}
+
+.icon{
+    margin-right: 10px;
+}
+
+.date-link{
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px;
+    color:rgb(57, 47, 47);
+    background-color: rgb(212, 196, 196);
+    border-radius: 20px;
+}
+
+.mat-icon{
+    height: 20px;
+}
+
+.date-time-div{
+    margin-top: 20px;
+}
+
+.date-time-input-field{
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: rgb(225, 217, 217);
+}
+

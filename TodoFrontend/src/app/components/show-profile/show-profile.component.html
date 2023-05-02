@@ -1,0 +1,36 @@
+<section>
+<mat-card class = "profile-card">
+    <h2>Your Profile Details</h2>
+    <mat-card-content>
+        <div class="container">
+            <div class="container text-center">
+                <img class = "img" src="{{userProfile}}" alt="">
+            <h1>{{usersData.fullName}}</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <table class = "table text-center">
+                        <tr>
+                            <td>Name</td>
+                            <td>{{usersData.fullname}}</td>
+                        </tr>
+                        <tr>
+                            <td>Contact No</td>
+                            <td>{{usersData.contact}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email Id</td>
+                            <td>{{usersData.email}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class = "text-center">
+        <button mat-raised-button routerLink="/userDashboard/update/{{usersData.email}}" color = "primary" class = "update">UPDATE</button>
+        <button mat-raised-button color = "accent">SHARE</button>
+      </mat-card-actions>
+</mat-card>
+</section>
+

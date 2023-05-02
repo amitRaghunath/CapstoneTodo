@@ -1,0 +1,122 @@
+/* responsiveness for xsmall devices */
+:host.XSmall .section{
+    margin: auto;
+    padding: auto;
+    position: absolute;
+    left: -280px;
+    transition: 0.4s ease-in-out;
+}
+
+:host.XSmall .sidenav-card{
+    height: 578px;
+    width: 215px;
+}
+
+:host.XSmall .menu_icon{
+    display:block;
+    width: 50px;
+}
+
+:host.XSmall .menu_icon_class{
+    margin-left: 0;
+}
+
+:host.XSmall .menuClass{
+    left: 0;
+    transition: 0.4s ease-in-out;
+ }
+
+/* responsiveness for small devices */
+
+
+:host.small .section{
+    margin: auto;
+    padding: auto;
+    position: absolute;
+    left: -280px;
+    transition: 0.4s ease-in-out;
+}
+
+:host.small .sidenav-card{
+    height: 578px;
+    width: 215px;
+}
+
+:host.small .menu_icon{
+    display:block;
+    width: 50px;
+}
+
+:host.small .menu_icon_class{
+    margin-left: 0;
+}
+
+:host.small .menuClass{
+    left: 0;
+    transition: 0.4s ease-in-out;
+ }
+/* styling card which is having sidenav */
+
+.sidenav-card{
+    height: 655px;
+    z-index: 2; 
+    background: var(--gray-light);
+    box-shadow: 2px 0 rgb(143, 135, 135);
+
+}
+/*  
+styling inbox div */
+.inbox-div{
+    display: flex;
+    padding: 10px;
+}
+
+/* setting hover property */
+.inbox-div:hover{
+    background: gray;
+}
+
+/* adjusting button */
+.btn-adjust{
+   margin-top: -12px;
+   margin-left: 0;
+}
+
+/* adjusitng icon */
+.icon-adjust{
+    width: 50px;
+}
+
+/* setting margin which is showing category div */
+.category-div{
+    margin-left: 20px;
+}
+
+/* setting hover functionality to li */
+.category-div ul li:hover{
+    cursor: pointer;
+    background: gray;
+}
+
+/* defining margin showing priorities */
+.priority-div{
+    margin-left: 10px;
+}
+.menu_icon{
+    display: none;
+    background:var(--gray-light);
+    padding: 10px;
+    box-shadow: 2px 2px rgb(143, 135, 135);
+    cursor: pointer;
+ }
+
+  
+
+.menu_icon span{
+    width: 32px;
+    height: 3px;
+    display: block;
+    background: black;
+    transition: 0.2s ease-in-out;
+    margin-top: 3px;
+ }

@@ -1,0 +1,110 @@
+<!-- <section>
+    <div *ngIf = "showMsgArchive" class = "welcome-div">
+        <h1>Your Didn't Completed Any Task Yet</h1>
+        <div class="cube-box">
+          <img src="../../../assets/todo-img-2.jpg" height="400px" width="400px">
+            <img src="../../../assets/todo-img-3.jpg" height="400px" width="400px">
+            <img src="../../../assets/todo-img-4.jpg" height="400px" width="400px">
+            <img src="../../../assets/todo-img-5.jpg" height="400px" width="400px">
+            <img src="../../../assets/todo-img-6.jpg" height="400px" width="400px">
+            <img src="../../../assets/todo-img-7.jpg" height="400px" width="400px">
+      </div>
+      </div>
+      <div *ngIf = "showArchive">
+      <div class = "heading-container">
+        <h1>Completed Task</h1>
+      <div class = "main-container">
+      <div *ngFor = "let task of pageSlice" class = "common-div">
+            
+             <mat-card class = "mediumPrDiv">
+              <div>
+                <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click) = "addTodosIntoTodosList(task, task.todoId)">
+                    <mat-icon class = "menu-div">done_all</mat-icon>
+                    <span class = "menu-div">Mark As Not Done</span>
+                  </button>
+                  <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+                    <mat-icon class = "menu-div">archive</mat-icon>
+                    <span class = "menu-div">Archive</span>
+                  </button>
+                  <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+                    <mat-icon class = "menu-div">delete</mat-icon>
+                    <span class = "menu-div">Delete</span>
+                  </button>
+                </mat-menu>
+                 </div>
+              <input class = "radio-button" type = "radio" mat-raised-button 
+              color = "accent" (click) = "addTodosIntoTodosList(task, task.todoId)">
+                    <h4 class = "todo-title-h5"><del>{{task.todoTitle | titlecase}}</del></h4>
+                <p class = "todo-para"> {{task.todoDesc.substring(0, 30) | titlecase}} ...</p>  
+             </mat-card>
+      </div>
+      </div>
+      </div>
+      <div class = "pagination-div">
+        <mat-paginator [length]="this.completeTask.length"
+                      [pageSize]="9"
+                      [pageSizeOptions]="[5, 9]"
+                      (page) = "onPageChange($event)">
+        </mat-paginator>
+      </div>
+      </div>
+</section> -->
+<section>
+  <div *ngIf = "showMsgArchive" class = "welcome-div">
+      <h1>Your Completed State is Empty</h1>
+      <div class="cube-box">
+        <img src="../../../assets/todo-img-2.jpg" height="400px" width="400px">
+          <img src="../../../assets/todo-img-3.jpg" height="400px" width="400px">
+          <img src="../../../assets/todo-img-4.jpg" height="400px" width="400px">
+          <img src="../../../assets/todo-img-5.jpg" height="400px" width="400px">
+          <img src="../../../assets/todo-img-6.jpg" height="400px" width="400px">
+          <img src="../../../assets/todo-img-7.jpg" height="400px" width="400px">
+    </div>
+    </div>
+    <div *ngIf = "showArchive">
+    <div class = "heading-container">
+      <h1>Completed Task</h1>
+    <div class = "main-container">
+    <div *ngFor = "let task of pageSlice" class = "common-div">
+           <!-- card will render if todo is in Medium priority -->
+           <mat-card class = "mediumPrDiv">
+            <div class = "showing-menu-div">
+              <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click) = "addTodosIntoTodosList(task, task.todoId)">
+                  <mat-icon class = "menu-div">done_all</mat-icon>
+                  <span class = "menu-div">Mark As Not Done</span>
+                </button>
+                <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+                  <mat-icon class = "menu-div">archive</mat-icon>
+                  <span class = "menu-div">Archive</span>
+                </button>
+                <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+                  <mat-icon class = "menu-div">delete</mat-icon>
+                  <span class = "menu-div">Delete</span>
+                </button>
+              </mat-menu>
+               </div>
+            <input class = "radio-button" type = "radio" mat-raised-button 
+            color = "accent" (click) = "addTodosIntoTodosList(task, task.todoId)">
+                  <h4 class = "todo-title-h5"><del>{{task.todoTitle | titlecase}}</del></h4>
+              <p class = "todo-para"> {{task.todoDesc.substring(0, 30) | titlecase}} ...</p>  
+           </mat-card>
+    </div>
+    </div>
+    </div>
+    <div class = "pagination-div">
+      <mat-paginator [length]="this.completeTask.length"
+                    [pageSize]="9"
+                    [pageSizeOptions]="[5, 9]"
+                    (page) = "onPageChange($event)">
+      </mat-paginator>
+    </div>
+    </div>
+</section>

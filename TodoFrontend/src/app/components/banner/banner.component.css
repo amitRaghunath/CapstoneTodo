@@ -1,0 +1,201 @@
+/* adding responsiveness for xsmall devices*/
+:host.XSmall .banner-section{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    }
+    
+    :host.XSmall .background{
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+    }
+    
+    
+    :host.XSmall .banner-content{
+        width: 100%;
+        margin:190px auto;
+        position: absolute;
+    }
+    
+    :host.XSmall .content{
+         margin: auto;
+         width: 100%;
+    }
+    
+    :host.XSmall .heading{
+        width: 100%;
+        margin: auto;
+        padding: auto;
+        font-size: 1.350rem;
+    }
+    
+    :host.XSmall .backgorund-content{
+        width: 100%;
+    }
+    
+    :host.XSmall .backgorund-content button{
+        width: 150px;
+        height: 40px;
+    }
+    
+    :host.XSmall .h2{
+        width: 100%;
+        margin:auto;
+        padding: auto;
+        font-size: 0.825rem;
+        justify-content: justify;
+        line-height: 20px;
+    }
+    
+    /* adding responsiveness for small devices*/
+    
+    :host.small{
+        margin: auto;
+        padding: auto;
+        width: 100%;
+        }
+    
+    :host.small .background{
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+    }
+    
+    :host.small .banner-content{
+        width: 100%;
+        margin:190px auto;
+        position: absolute;
+    }
+    
+    :host.small .content{
+        margin: auto;
+        width: 100%;
+    }
+    
+    :host.small .heading{
+        width: 100%;
+        margin: auto;
+        padding: auto;
+        font-size: 1.350rem;
+    }
+    
+    :host.small .backgorund-content{
+        width: 100%;
+    }
+    
+    :host.small .backgorund-content button{
+        width: 150px;
+        height: 40px;
+    }
+    
+    :host.small .h2{
+        width: 100%;
+        margin:auto;
+        padding: 0;
+        font-size: 0.825rem;
+        justify-content: justify;
+        line-height: 20px;
+    }
+    
+    
+    /* adding responsiveness for medium devices*/
+    
+    
+    :host.medium{
+        margin: auto;
+        padding: auto;
+        width: 100%;
+        }
+    
+    
+    :host.medium .background{
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+    }
+    
+    :host.medium .banner-content{
+        width: 100%;
+        margin:190px auto;
+        position: absolute;
+    }
+    
+    :host.medium .content{
+         margin: auto;
+         width: 100%;
+    }
+    
+    :host.medium .heading{
+        width: 100%;
+        margin: auto;
+        padding: auto;
+        font-size: 1.350rem;
+    }
+    
+    :host.medium .backgorund-content{
+        width: 100%;
+    }
+    
+    :host.medium .backgorund-content button{
+        width: 150px;
+        height: 40px;
+    }
+    
+    :host.medium .h2{
+        width: 100%;
+        margin:auto;
+        padding: auto;
+        font-size: 0.825rem;
+        justify-content: justify;
+        line-height: 20px;
+    }
+    
+    
+    /* setting up style for h1 heading */
+    
+    
+    .banner-container{
+        width: 100%;
+    }
+    
+    .p-style{
+        text-align: center;
+    }
+    
+    .heading{
+        color: white;
+        font-weight: 400;
+        font-size: 50px;
+        margin-left: 40px;
+        margin-top: 280px;
+    }
+    
+    /* setting up style for h2 */
+    
+    .h2{
+        color:white;
+        font-weight: 400;
+        margin-left: 30px;
+        font-size: 30px;
+        line-height: 40px;
+    }
+    
+    /* styling content of Home Page  */
+    
+    .backgorund-content{
+        width: 790px;
+        margin: auto;
+    }
+    
+    /* setting button style of home page */
+    
+    .backgorund-content button{
+        font-size: 20px;
+        font-weight: 400;
+        border-radius: 25px;
+        width: 200px;
+        height: 50px;
+        background: var(--dark-gray);
+        margin-top: 10px;
+    }

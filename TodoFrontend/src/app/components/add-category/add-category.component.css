@@ -1,0 +1,233 @@
+:host.XSmall .category-card{
+    width: 95%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .category-card form{
+    width: 100%;
+    padding: auto;
+    margin: auto;
+}
+
+:host.XSmall .form-field{
+    width: 100%;
+    padding: auto;
+    margin: auto;
+}
+
+:host.XSmall .show-category-div{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.XSmall .show-category{
+    margin:10px auto;
+    padding: auto;
+    width: 95%;
+}
+
+:host.XSmall .pagination-div{
+    position: relative;
+    bottom: 0;
+}
+
+:host.XSmall .pagination-div mat-paginator{
+    margin: auto;
+    padding: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+:host.small .category-card{
+    width: 95%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .category-card form{
+    width: 100%;
+    padding: auto;
+    margin: auto;
+}
+
+:host.small .form-field{
+    width: 100%;
+    padding: auto;
+    margin: auto;
+}
+
+:host.small .show-category-div{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.small .show-category{
+    margin:10px auto;
+    padding: auto;
+    width: 95%;
+}
+
+:host.small .pagination-div{
+    position: relative;
+    bottom: 0;
+}
+
+:host.small .pagination-div mat-paginator{
+    margin: auto;
+    padding: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* styling card which is holding add category form */
+.category-card{
+    width:500px;
+    padding: 30px;
+    margin: -100px auto;
+    height: 200px;
+}
+
+.show-category-div h2{
+    color: var(--dark-gray);
+}
+
+.show-category-div{
+    height: 300px;
+}
+
+.pagination-div mat-paginator{
+    width: 600px;
+    margin: auto;
+    background:transparent;
+    font-size: 1.2rem;
+}
+
+/* setting width for form field */
+.form-field{
+    width: 400px;
+}
+
+/* styling reset button */
+.cancel-btn-todo-category:hover{
+    background: gray;
+    color:white;
+}
+
+/* styling submit button of add category */
+.add-btn-todo-category:hover{
+    background: rgb(148, 148, 243);
+    color: white;
+}
+
+/* styling show category div to show all the categories */
+.show-category-div{
+    width: 500px;
+    margin: 105px auto;
+}
+
+/* styling show category card */
+
+.show-category{
+  padding: 10px;
+  background: var(--dark-gray);
+  color:white;
+  font-weight: 500;
+  width: 500px;
+  margin-top: 20px;
+}
+
+.show-category .delete-icon{
+    text-align: right;
+    margin-top: -20px;
+    color:white;
+    cursor: pointer;
+}
+
+.show-category .info-icon{
+    text-align: right;
+    margin-top: -30px;
+    color:white;
+    margin-right: 50px;
+}
+
+.welcome-div h3{
+    margin-top: 110px;
+}
+
+/* welcome div if user isn't having any todos */
+
+.welcome-div{
+    margin-top:10px;
+    margin-left: 450px;
+    width: 600px;
+}
+ 
+.welcome-div .cube-box{
+    margin: 130px;
+    margin-left: 50px;
+}
+
+
+/* Creating Cube Box */
+
+.cube-box{
+    width: 150px;
+    height: 150px;
+    transform-style:preserve-3d;
+}
+
+.cube-box img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.8;
+  transition: 0.5s;
+  object-fit: cover;
+}
+
+
+.cube-box img:nth-child(1){
+    transform: rotateY(0deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(2){
+    transform: rotateY(90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(3){
+    transform: rotateY(180deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(4){
+    transform: rotateY(-90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(5){
+    transform: rotateX(90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(6){
+    transform: rotateX(-90deg) translateZ(var(--deft));
+}
+
+.cube-box{
+    animation: loops 10s linear infinite;
+}
+
+.cube-box:hover{
+    --deft:200px;
+    animation-play-state: paused;
+}
+
+@keyframes loops{
+    0%{ transform: rotateX(0deg) rotateY(0deg); }
+    100%{ transform: rotateX(360deg) rotateY(360deg); }
+}
+
+#menu{
+    margin-top: -15px;
+    margin-left: 170px;
+}

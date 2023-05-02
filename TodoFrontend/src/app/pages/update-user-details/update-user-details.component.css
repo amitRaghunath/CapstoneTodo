@@ -1,0 +1,115 @@
+
+/* .myCard{
+    width: 440px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+
+.formField{
+    width: 400px;
+    background-color: white;
+}
+
+
+.resetBtn{
+    margin-left: 10px;
+}
+
+
+.icon{
+    margin-top: 105px;
+}
+
+#icon{
+    position: absolute;
+    margin-left: 235px;
+    margin-top: -40px;
+    color: black;
+} */
+:host.XSmall .container{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .myCard{
+    width: 90%;
+    margin:20px auto;
+    padding: auto;
+}
+
+:host.XSmall .formField{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .text-center button{
+    z-index: 0;
+}
+
+:host.small .container{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .myCard{
+    width: 90%;
+    margin:20px auto;
+    padding: auto;
+}
+
+ 
+
+:host.small .myCard{
+    width: 100%;
+    margin:20px auto;
+    padding: auto;
+}
+
+:host.small .formField{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .text-center button{
+    z-index: 0;
+}
+
+/* styling card which is holding registration form */
+.myCard{
+    width: 440px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+/* setting width and height of registraiton form */
+.formField{
+    width: 400px;
+    background-color: white;
+}
+
+/* styling reset button */
+.resetBtn{
+    margin-left: 10px;
+}
+
+/* setting margin to add profile icon */
+
+.select-pic-icon{
+    position: absolute;
+    text-align: right;
+    width: 64%;
+    z-index: 1;
+    margin-top: -38px;
+}
+
+ 
+
+ 
+ 
+ 

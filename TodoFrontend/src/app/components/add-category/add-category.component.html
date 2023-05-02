@@ -1,0 +1,62 @@
+<section>
+    <div>
+        <div>
+            <!-- card to showing add category form -->
+            <mat-card class = "category-card">
+                <h1>Add Category</h1>
+                
+                <!-- form to adding category -->
+                <form [formGroup] = "categoryForm" (ngSubmit) = "addCategories()">
+    
+                <!-- field to define category name                 -->
+                <mat-form-field class = "form-field" appearance="outline">
+                    <input type="text" matInput placeholder="Category Name" formControlName = "categoryName">
+                </mat-form-field>
+    
+                <!-- button to reset and submit category form -->
+                <button mat-button type = "reset" class="cancel-btn-todo-category">Reset</button>
+                <button mat-button type = "submit" class="add-btn-todo-category" [disabled] = "!categoryForm.valid">Add</button>
+              </form>
+            </mat-card>
+        </div>
+    
+        <div *ngIf = "showWelcomeMsg" class = "welcome-div">
+            <h3>You Didn't Created any Category Till Now</h3>
+            <div class="cube-box">
+                <img src="../../../assets/todo-img-2.jpg" height="400px" width="400px">
+                <img src="../../../assets/todo-img-3.jpg" height="400px" width="400px">
+                <img src="../../../assets/todo-img-4.jpg" height="400px" width="400px">
+                <img src="../../../assets/todo-img-5.jpg" height="400px" width="400px">
+                <img src="../../../assets/todo-img-6.jpg" height="400px" width="400px">
+                <img src="../../../assets/todo-img-7.jpg" height="400px" width="400px">
+          </div>
+          </div>
+           
+        <!-- showing category details in card -->
+
+        <div  *ngIf = "showCategoryContainer">
+        <div class = "show-category-div">
+        <h2>Your Available Categories</h2>
+         <mat-card mat-button class = "show-category" 
+         *ngFor = "let category of pageSlice">
+         <span>{{category.categoryName | titlecase}}</span>
+         <a class = "delete-icon" (click) = "deleteCategory(category.categoryId)"><mat-icon>delete
+        </mat-icon></a>
+        <a class = "info-icon" routerLink="/userDashboard/show-category-details/{{category.categoryId}}"><mat-icon>info
+        </mat-icon></a>
+        </mat-card>
+        </div>
+
+        <div class = "pagination-div">
+            <mat-paginator [length]="this.allCategoryDetails.length"
+                          [pageSize]="6"
+                          [pageSizeOptions]="[3, 6]"
+                          (page) = "onPageChange($event)">
+            </mat-paginator>
+        </div>
+    </div>
+    
+    </div>
+</section>
+<router-outlet></router-outlet>
+

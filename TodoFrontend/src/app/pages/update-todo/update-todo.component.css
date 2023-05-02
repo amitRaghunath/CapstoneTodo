@@ -1,0 +1,57 @@
+/* organizing card of add todo */
+.add-todo-card{
+    border-radius: 20px;
+    width: 600px;
+    padding: 30px;
+    margin:auto;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+/* setting width of form field */
+.form-field{
+    width: 550px;
+} 
+
+/* setting hover functionality to reset button */
+
+.reset-btn-todo-add:hover{
+    background: gray;
+    color:white;
+}
+
+/* setting hover funtionality to add todo button */
+
+.add-btn-todo-add:hover{
+    background: rgb(148, 148, 243);
+    color: white;
+}
+
+/* setting margin to add and reset button */
+
+.add-btn{
+    margin: 20px 0 20px 20px;
+}
+
+/* setting functionality for category input */
+
+.category-div{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* setting width for adding category */
+
+.add-category-form{
+    width:275px;
+}
+
+/* styling div which is showing due date */
+.dueDateOption-div{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 80px;
+}
+
+/* setting up margin in mat-chip component div */
+ .mat-chip-div{
+    margin-bottom: 10px;
+}

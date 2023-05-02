@@ -1,0 +1,24 @@
+@import '../node_modules/@syncfusion/ej2-material-theme/styles/material.css';
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { 
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+/* Background Setup For Landing Page */
+.background{
+    background: rgba(45, 28, 28, 0.7) url(./assets/pexels-photo-834897.webp);
+    background-size: cover;
+    background-blend-mode:darken;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+:root {
+    --green: #69F0AE;
+    --green-light: #B9F6CA;
+    --gray-light: #b7aaaa;
+    --dark-gray: #263238;
+    --black: #212121;
+}
+

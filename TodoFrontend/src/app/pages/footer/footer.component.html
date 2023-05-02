@@ -1,0 +1,116 @@
+<!-- <footer>
+    <div class="main-content">
+        <div class="left box">
+            <h2>About Us</h2>
+            <div class = "content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur delectus nisi provident animi, vel deleniti quod natus est aspernatur tenetur magni optio placeat, amet labore suscipit adipisci ratione nam assumenda.</p>
+               <div class="social">
+                <a href="#"><i class=" footer-icon fa-brands fa-facebook"></i></a>
+                <a href="#"><i class=" footer-icon fa-brands fa-instagram"></i></a>
+                <a href="#"><i class=" footer-icon fa-brands fa-twitter"></i></a>
+                <a href="#"><i class=" footer-icon fa-brands fa-youtube"></i></a>
+               </div>
+            </div>
+        </div>
+        <div class="center box">
+            <h2>Address</h2>
+            <div class="content">
+                <div class="place">
+                    <mat-icon class = "icon">location_on</mat-icon>
+                    <span>Ayodhya, Utter Pradesh</span>
+                </div>
+                <div class="phone">
+                    <mat-icon class = "icon">phone</mat-icon>
+                    <span>Ayodhya, Utter Pradesh</span>
+                </div>
+                <div class="email">
+                    <mat-icon class = "icon">email</mat-icon>
+                    <span>Ayodhya, Utter Pradesh</span>
+                </div>
+            </div>
+        </div>
+        <div class="right box">
+            <h2>Contact Us</h2>
+            <div class="content">
+                <form>
+                    <div class="email">
+                        <mat-form-field class="text" appearance="outline">
+                        <input type="email" placeholder="Enter Your Email" name = "email" matInput required>  
+                       </mat-form-field>
+                    </div>
+                    <div class="message">
+                        <mat-form-field class="text" appearance="outline">
+                        <textarea name="message" placeholder="Enter Your Message" id="" matInput cols="30" rows="2" required></textarea>
+                    </mat-form-field>
+                    </div>
+                    <div class="btn">
+                        <button mat-button type = "submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class = "bottom-content"><h2>&copy; ALRIGHT RESERVED</h2></div>
+    </footer> -->
+    <section>
+        <footer id = "footer">
+               <div class = "arrow-div">
+                   <i class="fa-solid fa-arrow-up arrow" (click) = "moveToHeader()"></i>
+               </div>
+           <div class="main-content">
+               <div class="left box">
+                   <h2>About Us</h2>
+                   <div class = "content">
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur delectus nisi provident animi, vel deleniti quod natus est aspernatur tenetur magni optio placeat, amet labore suscipit adipisci ratione nam assumenda.</p>
+                      <div class="social">
+                       <a href="#" target="_blank"><i class="footer-icon fa-brands fa-facebook"></i></a>
+                       <a href="#" target="_blank"><i class="footer-icon fa-brands fa-instagram"></i></a>
+                       <a href="#" target="_blank"><i class="footer-icon fa-brands fa-twitter"></i></a>
+                       <a href="https://www.linkedin.com/in/rakesh-tiwari-0a87811b7" target="_blank"><i class="footer-icon fa-brands fa-linkedin"></i></a>
+                      </div>
+                   </div>
+               </div>
+               <div class="center box">
+                   <h2>Address</h2>
+                   <div class="content">
+                       <div class="place">
+                           <mat-icon class = "icon">location_on</mat-icon>
+                           <span>Ayodhya, Utter Pradesh</span>
+                       </div>
+                       <div class="phone">
+                           <mat-icon class = "icon">phone</mat-icon>
+                           <span>+91 989898982</span>
+                       </div>
+                       <div class="email">
+                           <mat-icon class = "icon">email</mat-icon>
+                           <span>myTodo@gmail.com</span>
+                       </div>
+                   </div>
+               </div>
+               <div class="right box">
+                   <h2>Contact Us</h2>
+                   <div class="content">
+                       <mat-card class = "footer-card">
+                       <form [formGroup] = "footerForm">
+                           <mat-form-field class = "email-field" appearance="outline">
+                               <input matInput type="email" placeholder="Enter Your Email" name = "email" required formControlName = "emailid">  
+                           </mat-form-field>
+                           <mat-form-field class="email-field" appearance="outline">
+                               <textarea matInput name="message" placeholder="Enter Your Message" id="message" cols="30" rows="1" required formControlName = "messageBody">
+
+                               </textarea>
+                           </mat-form-field>
+                           <br>
+                           <div class="btn">
+                           
+                               <button mat-button type = "submit" (click)="sendData()">Send</button>
+                           </div>
+                       </form>
+                   </mat-card>
+                   </div>
+               </div>
+           </div>
+           <hr>
+           <div class = "bottom-content"><h2>&copy; ALRIGHT RESERVED</h2></div>
+       </footer>
+       </section>

@@ -1,0 +1,115 @@
+/* .profile-card{
+    margin-top: -50px;
+}
+
+.img{
+    border:2px solid gray;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.table tr td{
+    padding:20px 20px;
+    border: 0.5px solid gray;
+}
+.text-center{
+    margin: auto;
+}
+.update{
+    margin-right: 20px;
+} */
+
+:host.XSmall section{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .profile-card{
+    width: 90%;
+    margin:20px auto;
+    padding: auto;
+}
+
+:host.XSmall .profile-card mat-card-content{
+  width: 100%;
+  margin: auto;
+  padding: auto;
+}
+
+
+:host.XSmall .table{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .table tr{
+ width: 100%;
+ margin: auto;
+ padding: auto;
+}
+
+:host.small section{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .profile-card{
+    width: 90%;
+    margin:20px auto;
+    padding: auto;
+}
+
+:host.small .profile-card mat-card-content{
+  width: 100%;
+  margin: auto;
+  padding: auto;
+}
+
+
+:host.small .table{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .table tr{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+   }
+   
+
+
+.profile-card{
+    margin: -50px auto;
+    padding: 10px;
+    width: 80%;
+}
+
+.img{
+    border:2px solid gray;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.table tr td{
+    padding:20px 20px;
+    border: 0.5px solid gray;
+}
+.text-center{
+    margin: auto;
+}
+.update{
+    margin-right: 20px;
+}

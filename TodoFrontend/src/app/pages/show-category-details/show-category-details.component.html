@@ -1,0 +1,153 @@
+<section>
+  <!-- div will be shown if no any todos are available -->
+<div *ngIf = "showWelcomeMsg" class = "welcome-div">
+ <h1>Your Category is Empty Till Now</h1>
+ <div class="cube-box">
+   <img src="../../../assets/todo-img-2.jpg" height="400px" width="400px">
+     <img src="../../../assets/todo-img-3.jpg" height="400px" width="400px">
+     <img src="../../../assets/todo-img-4.jpg" height="400px" width="400px">
+     <img src="../../../assets/todo-img-5.jpg" height="400px" width="400px">
+     <img src="../../../assets/todo-img-6.jpg" height="400px" width="400px">
+     <img src="../../../assets/todo-img-7.jpg" height="400px" width="400px">
+</div>
+</div>
+     <!-- getting all categories after iterating -->
+ 
+<div *ngIf = "showMainContainer">
+ <h1>Your Todos</h1>
+  <!-- defining common div for all priority label todos    -->
+  <div class = "main-container">
+<div class = "common-div" *ngFor = "let task of pageSlice" [ngSwitch] = "task.priorities">
+ 
+   <!-- card will render if todo is in high priority -->  
+   <mat-card *ngSwitchCase = "'High'" class = "highPrDiv">
+     <div>
+     <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu">
+       <mat-icon>more_vert</mat-icon>
+     </button>
+     <mat-menu #menu="matMenu">
+       <button mat-menu-item routerLink = "/userDashboard/catTodo/{{task.todoId}}/{{categoryname}}">
+         <mat-icon class = "menu-div">info</mat-icon>
+         <span class = "menu-div">See Details</span>
+       </button>
+       <button mat-menu-item routerLink = "/userDashboard/updateTodo/{{task.todoId}}">
+         <mat-icon class = "menu-div">update</mat-icon>
+         <span class = "menu-div">Update</span>
+       </button>
+       <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+         <mat-icon class = "menu-div">archived</mat-icon>
+         <span class = "menu-div">Archived</span>
+       </button>
+       <button mat-menu-item (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+         <mat-icon class = "menu-div">done_all</mat-icon>
+         <span class = "menu-div">Completed</span>
+       </button>
+       <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+         <mat-icon class = "menu-div">delete</mat-icon>
+         <span class = "menu-div">Delete</span>
+       </button>
+     </mat-menu>
+      </div>
+     <input class = "radio-button" type = "radio" mat-raised-button color = "accent"
+     (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+             <a routerLink = "/userDashboard/catTodo/{{task.todoId}}/{{categoryname}}">           
+             <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+             <div class = "due-date-div"><h5 class = "showing-duedate-h5"><span>
+               {{task.dueDate | date:'medium'}}</span></h5></div>
+              <p class = "todo-para">{{task.todoDesc.substring(0, 30) | titlecase}}..</p> 
+             </a>   
+     </mat-card>
+<!-- card will render if todo is in Medium priority -->
+               
+<mat-card *ngSwitchCase = "'Medium'" class = "mediumPrDiv">
+  <div class = "menu-div">
+    <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu" 
+    aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink = "/userDashboard/catTodo/{{task.todoId}}/{{categoryname}}">
+        <mat-icon class = "menu-div">info</mat-icon>
+        <span class = "menu-div">See Details</span>
+      </button>
+      <button mat-menu-item routerLink = "/userDashboard/update-todo/{{task.todoId}}">
+        <mat-icon class = "menu-div">update</mat-icon>
+        <span class = "menu-div">Update</span>
+      </button>
+      <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+        <mat-icon class = "menu-div">archived</mat-icon>
+        <span class = "menu-div">Archived</span>
+      </button>
+      <button mat-menu-item (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+        <mat-icon class = "menu-div">done_all</mat-icon>
+        <span class = "menu-div">Completed</span>
+      </button>
+      <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+        <mat-icon class = "menu-div">delete</mat-icon>
+        <span class = "menu-div">Delete</span>
+      </button>
+    </mat-menu>
+     </div>
+  <input class = "radio-button" type = "radio" mat-raised-button
+   color = "accent" (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+  <a routerLink = "/userDashboard/catTodo/{{task.todoId}}/{{categoryname}}"> 
+        <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+        <div class = "due-date-div"><h5 class = "showing-duedate-h5"><span>
+          {{task.dueDate | date:'medium'}}</span></h5></div>
+    <p class = "todo-para"> {{task.todoDesc.substring(0, 30) | titlecase}} ...</p> 
+  </a> 
+ </mat-card>
+<!-- card will if there is no priority todo -->
+<mat-card *ngSwitchDefault class = "no-priority">
+  <div class = "menu-div">
+    <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu" 
+    aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink = "/userDashboard/catTodo/{{task.todoId}}/{{categoryname}}">
+        <mat-icon class = "menu-div">info</mat-icon>
+        <span class = "menu-div">See Details</span>
+      </button>
+      <button mat-menu-item routerLink = "/userDashboard/update-todo/{{task.todoId}}">
+        <mat-icon class = "menu-div">update</mat-icon>
+        <span class = "menu-div">Update</span>
+      </button>
+      <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+        <mat-icon class = "menu-div">archived</mat-icon>
+        <span class = "menu-div">Archived</span>
+      </button>
+      <button mat-menu-item (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+        <mat-icon class = "menu-div">done_all</mat-icon>
+        <span class = "menu-div">Completed</span>
+      </button>
+      <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+        <mat-icon class = "menu-div">delete</mat-icon>
+        <span class = "menu-div">Delete</span>
+      </button>
+    </mat-menu>
+     </div>
+     <input class = "radio-button" type = "radio" mat-raised-button color = "accent" 
+     (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+          <a routerLink = "/userDashboard/catTodo/{{task.todoId}}/{{categoryname}}">
+              <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+              <div class = "due-date-div"><h5 class = "showing-duedate-h5"><span>
+               {{task.dueDate | date:'medium'}}</span></h5></div>
+            <p class = "todo-para">{{task.todoDesc.substring(0, 30) | titlecase}}...</p>
+           </a>
+   </mat-card>    
+ </div>
+ </div>
+ <div class = "pagination-div">
+   <mat-paginator [length]="this.allTodosOfCategory.length"
+                 [pageSize]="9"
+                 [pageSizeOptions]="[5, 9]"
+                 (page) = "onPageChange($event)">
+   </mat-paginator>
+ </div>
+ </div>
+ 
+ 
+ 
+</section> 

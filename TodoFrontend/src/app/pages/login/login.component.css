@@ -1,0 +1,93 @@
+/* 
+
+
+.myCard{
+    width: 440px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.formField{
+    width: 400px;
+}
+
+
+.resetBtn{
+    margin-left: 10px;
+}
+
+
+.h1{
+    font-weight: bold;
+    color:rgb(98, 98, 236);
+}
+
+.h3-div{
+    margin-top: 20px;
+    text-align: right;
+}
+  */
+  .spacer{
+    flex: 1 1 0;
+  }
+  
+  :host.XSmall .myCard{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+  }
+  
+  :host.XSmall .formField{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :host.small .myCard{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+  }
+  
+  :host.small .formField{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* styling card holding login form */
+  
+  .myCard{
+      width: 440px;
+      padding: 20px;
+      text-align: center; 
+  }
+  
+  /* setting width for form field */
+  .formField{
+      width: 400px;
+  }
+  
+  /* styling reset button */
+  .resetBtn{
+      margin-left: 10px;
+  }
+  
+  /* styling heading */
+  .h1{
+      font-weight: 400;
+      color:rgb(98, 98, 236);
+  }
+  
+  /* styling div having forgot functionlity */
+  .h3-div{
+      margin-top: 20px;
+      text-align: right;
+  }
+  
+  .h3-div h3 a{
+    cursor: pointer;
+    border-bottom: 1px solid blueviolet;
+    color:blueviolet;
+  }

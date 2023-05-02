@@ -1,0 +1,48 @@
+
+<header class = "header-div" id="header">
+  <mat-toolbar class="header">
+    <div class = "logo">
+     <a routerLink = "/home">
+     <img src="../../../assets/39d33196-f0e9-4b76-88fe-2ae58874a6c9.svg" alt="logo">
+     </a>
+    </div>
+  <div class="menu_icon" [class.menu_icon_class] = "menu_icon_variable" (click)="openMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
+    <div class = "menu" [class.menuClass] = "menuVariable">
+    <ul>
+    <li class = "toggle-button"><a routerLink = "/home">Home</a></li>
+    <li *ngIf = "isLoggedIn" class = "toggle-button"><a routerLink = "/userDashboard/task">
+     Dashboard</a>
+    </li>
+    <li class = "toggle-button"><a (click) = "toAbout()">About Us</a></li>
+    <li class = "toggle-button"><a (click) = "toContact()">Contact Us</a></li>
+   </ul>
+    </div>
+
+     <span class="example-spacer"></span>
+     <button *ngIf = "!isLoggedIn"  class = "toggle-button" (click)="openDialogSignIn('0ms', '0ms')">
+     <p>SignUp</p>
+      </button>
+     <button *ngIf = "!isLoggedIn"   class = "toggle-button" (click)="openDialog('0ms', '0ms')">
+       <p>LogIn</p>
+     </button>
+     <div *ngIf = "isLoggedIn && users">
+       <span class = "name-span">Welcome {{users.fullname | titlecase}}</span>
+     <a [matMenuTriggerFor]="belowMenu" class = "mylink">
+     <img *ngIf = "isLoggedIn && users" [src] = "users.profile" class = "profile">
+     </a>
+     
+     <mat-menu #belowMenu="matMenu" xPosition="before" class = "menu-option-header">
+         <button mat-menu-item routerLink="/userDashboard/show-profile">{{users.fullname | titlecase}}</button>
+         <button mat-menu-item routerLink = "/userDashboard/update/{{users.email}}">Update Profile</button>
+         <button mat-menu-item (click) = "logoutUser()">Logout</button>
+       </mat-menu>
+     
+   </div>
+   </mat-toolbar>
+ </header>
+ 
+

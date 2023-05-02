@@ -1,0 +1,316 @@
+<!--  
+ <div class = "priority-div">
+  <mat-chip-listbox aria-label="Fish selection">
+    <mat-chip-option (click) = "showHighPriorityTask()" (click)="openPriorityDiv()">High</mat-chip-option>
+    <mat-chip-option (click) = "showMediumPriorityTask()" (click)="openPriorityDiv()">Medium</mat-chip-option>
+    <mat-chip-option (click) = "showLowPriorityTask()" (click)="openPriorityDiv()">Low</mat-chip-option>
+  </mat-chip-listbox>
+ </div>
+<div>
+  <div>
+  
+  
+  <div *ngIf = "showDiv">
+  <div class = "common-div" *ngFor = "let task of pageSlice" [ngSwitch] = "task.priorities">
+     
+   
+    <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+      
+       
+      <mat-card *ngSwitchCase = "'High'" class = "highPrDiv">
+                  <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                  <h5 class = "due-h5">{{task.dueDate | date:'medium'}}</h5>
+                <p class = "todo-para">{{task.todoDesc | titlecase}}..</p>   
+       </mat-card>
+       
+        </a>
+     
+
+       
+        <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">  
+         
+          
+       <mat-card *ngSwitchCase = "'Medium'" class = "mediumPrDiv">
+                <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                <h5 class = "due-h5">{{task.dueDate | date:'medium'}}</h5>
+           <p class = "todo-para"> {{task.todoDesc | titlecase}} ...</p>  
+        </mat-card>
+       
+        </a>
+
+       
+        <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+
+        
+          
+        <mat-card *ngSwitchCase = "'Low'" class = "lowPrDiv">
+                <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                <h5 class = "due-h5">{{task.dueDate | date:'medium'}}</h5>
+             <p class = "todo-para">{{task.todoDesc | titlecase}}...</p>
+     </mat-card>
+    
+    </a>
+</div>
+</div>
+</div>
+ 
+
+<div class="todo-details-div" *ngIf = "!showDiv">
+  
+    <div class = "common-div" *ngFor = "let task of allTodos" [ngSwitch] = "task.priorities">
+     
+      
+      <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+        
+        <div *ngIf = "showHighPriority">
+        <mat-card *ngSwitchCase = "'High'" class = "highPrDiv">
+                    <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                    <h5 class = "due-h5">{{task.dueDate | date:'medium'}}</h5>
+                  <p class = "todo-para">{{task.todoDesc | titlecase}}..</p>   
+         </mat-card>
+        </div>
+          </a>
+       
+
+          
+          <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">  
+           
+            <div *ngIf = "showMediumPriority">
+         <mat-card *ngSwitchCase = "'Medium'" class = "mediumPrDiv">
+                  <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                  <h5 class = "due-h5">{{task.dueDate | date:'medium'}}</h5>
+             <p class = "todo-para"> {{task.todoDesc | titlecase}} ...</p>  
+          </mat-card>
+        </div>
+          </a>
+
+     
+          <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+
+            
+            <div *ngIf = "showLowPriority">
+          <mat-card *ngSwitchCase = "'Low'" class = "lowPrDiv">
+                  <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                  <h5 class = "due-h5">{{task.dueDate | date:'medium'}}</h5>
+               <p class = "todo-para">{{task.todoDesc | titlecase}}...</p>
+       </mat-card>
+      </div>
+      </a>
+</div>
+</div>
+<div class = "pagination-div">
+  <mat-paginator [length]="this.allTodos.length"
+                [pageSize]="9"
+                [pageSizeOptions]="[5, 9]"
+                (page) = "onPageChange($event)">
+  </mat-paginator>
+</div>
+</div> -->
+
+
+<section>
+  <div *ngIf = "showWelcomeMsg" class = "welcome-div">
+      <h1>You Dont't Have Any Available Todos</h1>
+      <div class="cube-box">
+        <img src="../../../assets/todo-img-2.jpg" height="400px" width="400px">
+        <img src="../../../assets/todo-img-3.jpg" height="400px" width="400px">
+        <img src="../../../assets/todo-img-4.jpg" height="400px" width="400px">
+        <img src="../../../assets/todo-img-5.jpg" height="400px" width="400px">
+        <img src="../../../assets/todo-img-6.jpg" height="400px" width="400px">
+        <img src="../../../assets/todo-img-7.jpg" height="400px" width="400px">
+    </div>
+    </div>
+    
+     <!-- mat-chip for showing different different priority -->
+      
+     <div class = "priority-div" *ngIf = "showTodoContainer">
+      <h1>Filter Your Todos As Per Priority</h1>
+       <button mat-raised-button class = "priorityBtn" id = "all-btn" (click) = "getAllTodosFromList()">All</button>
+       <button mat-raised-button class = "priorityBtn" id = "high-btn" (click) = "highPriorityTodo()">High</button>
+       <button mat-raised-button class = "priorityBtn" id = "medium-btn" (click) = "mediumPriorityTodo()">Medium</button>
+       <button mat-raised-button class = "priorityBtn" id = "low-btn" (click) = "lowPriorityTodo()">Low</button>
+      </div>
+      
+     <div *ngIf = "showTodoContainer" class="todo-container">
+      <div class = "adjust-pagination container-heading">
+      <!-- div to be shown if user has added todos --> 
+      <div class = "main-container">
+        <!-- defining common div for all priority label todos    -->
+        <div class = "common-div" *ngFor = "let task of pageSlice" [ngSwitch] = "task.priorities">
+          
+                 <!-- card will render if todo is in high priority -->  
+                <mat-card *ngSwitchCase = "'High'" class = "highPrDiv">
+                  <div class = "menu-div showing-menu-div">
+                    <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu" 
+                    aria-label="Example icon-button with a menu">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+                        <mat-icon class = "menu-div">info</mat-icon>
+                        <span class = "menu-div">See Details</span>
+                      </button>
+                      <button mat-menu-item routerLink = "/userDashboard/update-todo/{{task.todoId}}">
+                        <mat-icon class = "menu-div">update</mat-icon>
+                        <span class = "menu-div">Update</span>
+                      </button>
+                      <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+                        <mat-icon class = "menu-div">archived</mat-icon>
+                        <span class = "menu-div">Archived</span>
+                      </button>
+                      <button mat-menu-item (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+                        <mat-icon class = "menu-div">done_all</mat-icon>
+                        <span class = "menu-div">Completed</span>
+                      </button>
+                      <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+                        <mat-icon class = "menu-div">delete</mat-icon>
+                        <span class = "menu-div">Delete</span>
+                      </button>
+                    </mat-menu>
+                     </div>
+                 <input class = "radio-button" type = "radio" mat-raised-button color = "accent"
+                 (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+                         <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">           
+                         <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                         <div class = "due-date-div"><h5 class = "showing-duedate-h5">
+                          {{task.dueDate | date:'medium'}}</h5></div>
+                          <p class = "todo-para">{{task.todoDesc.substring(0, 30) | titlecase}}..</p> 
+                         </a>   
+                 </mat-card>
+               
+                   <!-- link to show todos details -->
+                  
+                   <!-- card will render if todo is in Medium priority -->
+                    
+                 <mat-card *ngSwitchCase = "'Medium'" class = "mediumPrDiv">
+                  <div class = "menu-div showing-menu-div">
+                    <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu" 
+                    aria-label="Example icon-button with a menu">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+                        <mat-icon class = "menu-div">info</mat-icon>
+                        <span class = "menu-div">See Details</span>
+                      </button>
+                      <button mat-menu-item routerLink = "/userDashboard/update-todo/{{task.todoId}}">
+                        <mat-icon class = "menu-div">update</mat-icon>
+                        <span class = "menu-div">Update</span>
+                      </button>
+                      <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+                        <mat-icon class = "menu-div">archived</mat-icon>
+                        <span class = "menu-div">Archived</span>
+                      </button>
+                      <button mat-menu-item (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+                        <mat-icon class = "menu-div">done_all</mat-icon>
+                        <span class = "menu-div">Completed</span>
+                      </button>
+                      <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+                        <mat-icon class = "menu-div">delete</mat-icon>
+                        <span class = "menu-div">Delete</span>
+                      </button>
+                    </mat-menu>
+                     </div>
+                   <input class = "radio-button" type = "radio" mat-raised-button color = "accent"
+                   (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+                   <a routerLink = "/userDashboard/todo-details/{{task.todoId}}"> 
+                         <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                         <div class = "due-date-div"><h5 class = "showing-duedate-h5">
+                          {{task.dueDate | date:'medium'}}</h5></div>
+                     <p class = "todo-para"> {{task.todoDesc.substring(0, 30) | titlecase}} ...</p> 
+                   </a> 
+                  </mat-card>
+                
+                  <!-- link to show todos details -->
+                  
+                   <!-- card will render if todo is in Low priority -->
+                    
+                  <mat-card *ngSwitchCase = "'Low'" class = "lowPrDiv">
+                    <div class = "menu-div showing-menu-div">
+                      <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu" 
+                      aria-label="Example icon-button with a menu" (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+                        <mat-icon>more_vert</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        <button mat-menu-item routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+                          <mat-icon class = "menu-div">info</mat-icon>
+                          <span class = "menu-div">See Details</span>
+                        </button>
+                        <button mat-menu-item routerLink = "/userDashboard/update-todo/{{task.todoId}}">
+                          <mat-icon class = "menu-div">update</mat-icon>
+                          <span class = "menu-div">Update</span>
+                        </button>
+                        <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+                          <mat-icon class = "menu-div">archived</mat-icon>
+                          <span class = "menu-div">Archived</span>
+                        </button>
+                        <button mat-menu-item (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+                          <mat-icon class = "menu-div">done_all</mat-icon>
+                          <span class = "menu-div">Completed</span>
+                        </button>
+                        <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+                          <mat-icon class = "menu-div">delete</mat-icon>
+                          <span class = "menu-div">Delete</span>
+                        </button>
+                      </mat-menu>
+                       </div>
+                   <input class = "radio-button" type = "radio" mat-raised-button color = "accent" (click) = "addTodosIntoArchive(task, task.todoId)">
+                       <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+                         <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                         <div class = "due-date-div"><h5 class = "showing-duedate-h5">
+                          {{task.dueDate | date:'medium'}}</h5></div>
+                       <p class = "todo-para">{{task.todoDesc.substring(0, 30) | titlecase}}...</p>
+                       </a>
+               </mat-card>
+               <!-- card will render if todo is in No priority -->
+           
+          <mat-card *ngSwitchDefault class = "no-priority">
+            <div class = "menu-div showing-menu-div">
+              <button class = "menu-class" mat-icon-button [matMenuTriggerFor]="menu" 
+              aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+                  <mat-icon class = "menu-div">info</mat-icon>
+                  <span class = "menu-div">See Details</span>
+                </button>
+                <button mat-menu-item routerLink = "/userDashboard/update-todo/{{task.todoId}}">
+                  <mat-icon class = "menu-div">update</mat-icon>
+                  <span class = "menu-div">Update</span>
+                </button>
+                <button mat-menu-item (click) = "addTodosIntoArchive(task, task.todoId)">
+                  <mat-icon class = "menu-div">archived</mat-icon>
+                  <span class = "menu-div">Archived</span>
+                </button>
+                <button mat-menu-item (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+                  <mat-icon class = "menu-div">done_all</mat-icon>
+                  <span class = "menu-div">Completed</span>
+                </button>
+                <button mat-menu-item (click) = "deleteTodos(task.todoId)">
+                  <mat-icon class = "menu-div">delete</mat-icon>
+                  <span class = "menu-div">Delete</span>
+                </button>
+              </mat-menu>
+               </div>
+            <input class = "radio-button" type = "radio" mat-raised-button color = "accent"
+            (click) = "addTodosIntoArchiveCompleted(task, task.todoId)">
+                 <a routerLink = "/userDashboard/todo-details/{{task.todoId}}">
+                     <h4 class = "todo-title-h5">{{task.todoTitle | titlecase}}</h4>
+                   <div class = "due-date-div"><h5 class = "showing-duedate-h5"><span>
+                    {{task.dueDate | date:'medium'}}</span></h5></div>
+                   <p class = "todo-para">{{task.todoDesc.substring(0, 30) | titlecase}}...</p>
+                  </a>
+          </mat-card> 
+       </div>
+       </div>
+       </div>
+       <div class = "pagination-div">
+        <mat-paginator [length]="this.allTodos.length"
+                      [pageSize]="6"
+                      [pageSizeOptions]="[3, 6]"
+                      (page) = "onPageChange($event)">
+        </mat-paginator>
+      </div>
+      </div>
+</section>

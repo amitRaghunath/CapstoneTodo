@@ -1,0 +1,291 @@
+:host.XSmall .heading-container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    height: 100%;
+}
+
+:host.XSmall .main-container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    display: block;
+}
+
+:host.XSmall .common-div{
+    margin:auto;
+    padding: auto;
+    width: 95%;
+}
+
+
+:host.XSmall .menu-class{
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .showing-menu-div{
+   margin: auto;
+   padding: auto;
+   width: 100%;
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: flex-end;
+   position: absolute;
+   margin-top: 30px;
+}
+
+:host.XSmall .pagination-div{
+    position: relative;
+    bottom: 0;
+}
+
+:host.XSmall .pagination-div mat-paginator{
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    margin: auto;
+}
+
+:host.XSmall .welcome-div{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .cube-box{
+    width: 50%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .welcome-div h1{
+    width: 80%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .main-container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    display: block;
+}
+
+:host.small .common-div{
+    margin:auto;
+    padding: auto;
+    width: 95%;
+}
+
+
+:host.small .menu-class{
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .showing-menu-div{
+   margin: auto;
+   padding: auto;
+   width: 100%;
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: flex-end;
+   position: absolute;
+   margin-top: 30px;
+}
+
+:host.small .pagination-div{
+    position: relative;
+    bottom: 0;
+}
+
+:host.small .pagination-div mat-paginator{
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    margin: auto;
+}
+
+:host.small .welcome-div{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .cube-box{
+    width: 50%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .welcome-div h1{
+    width: 80%;
+    margin: auto;
+    padding: auto;
+}
+
+
+.main-container{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.heading-container{
+    height: 100%;
+}
+
+.pagination-div{
+    position: absolute;
+    bottom: 0;
+}
+
+.pagination-div mat-paginator{
+    width: 100%;
+    margin: auto;
+    background:transparent;
+    font-size: 1.2rem;
+    margin-left: 180px;
+}
+
+.heading-container h1{
+    margin-left: 20px;
+}
+
+/* todos having medium priority this div will render */
+
+.mediumPrDiv{
+    background: var(--green-light);
+    margin-top: 5px;
+    color: white;
+    padding: 10px;
+}
+.common-div{
+    width:350px;
+    margin: 20px;
+}
+
+.common-div a{
+    text-decoration: none;
+}
+
+/* heading to show due date of todos */
+.showing-duedate-h5{
+    color: rgb(118, 111, 111);
+    font-weight: 500;
+    margin-top: -15px;
+    margin-left: 25px;
+  }
+
+  /* heading to show title of todos */
+
+.todo-title-h5{
+    font-weight: 500;
+    color:rgb(117, 106, 106);
+    margin-left: 25px;
+}
+
+/* paragraph to showing todos description */
+
+.todo-para{
+    font-weight: 500;
+    color:rgb(117, 106, 106);
+    margin-top: -10px;
+    margin-left: 25px;
+}
+
+/* styling radio button */
+
+.radio-button{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+/* styling menu option */
+
+.menu-class{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: -16px;
+    color:gray;
+}
+
+
+/* welcome div if user isn't having any todos */
+
+.welcome-div{
+    margin-top:10px;
+    margin-left: 350px;
+    width: 400px;
+}
+ 
+.welcome-div .cube-box{
+    margin-top: 155px;
+    margin-left: 50px;
+}
+
+.menu-div{
+    color: var(--dark-gray);
+}
+
+
+/* Creating Cube Box */
+
+.cube-box{
+    width: 200px;
+    height: 200px;
+    transform-style:preserve-3d;
+}
+
+.cube-box img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.8;
+  transition: 0.5s;
+  object-fit: cover;
+}
+
+
+.cube-box img:nth-child(1){
+    transform: rotateY(0deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(2){
+    transform: rotateY(90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(3){
+    transform: rotateY(180deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(4){
+    transform: rotateY(-90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(5){
+    transform: rotateX(90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(6){
+    transform: rotateX(-90deg) translateZ(var(--deft));
+}
+
+.cube-box{
+    animation: loops 10s linear infinite;
+}
+
+.cube-box:hover{
+    --deft:200px;
+    animation-play-state: paused;
+}
+
+@keyframes loops{
+    0%{ transform: rotateX(0deg) rotateY(0deg); }
+    100%{ transform: rotateX(360deg) rotateY(360deg); }
+}

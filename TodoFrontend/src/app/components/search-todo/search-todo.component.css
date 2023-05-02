@@ -1,0 +1,22 @@
+.formField{
+    width: 600px;
+}
+:host.XSmall .formField{
+    width: 100%;
+    margin: auto;
+}
+
+:host.XSmall .myForm{
+    width: 100%;
+    margin: auto;
+}
+
+:host.small .myForm{
+    width: 100%;
+    margin: auto;
+}
+
+:host.small .formField{
+    width: 100%;
+    margin: auto;
+}

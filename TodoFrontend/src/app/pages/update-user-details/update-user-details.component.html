@@ -1,0 +1,67 @@
+<section>
+<!-- main container -->
+<div class="container">
+
+    <!-- card which is holding registration form -->
+     <mat-card class = "myCard">
+ 
+         <!-- defining signing form -->
+     <form [formGroup] = "Update" (ngSubmit) = "onSubmit()">
+ 
+         <!-- defining field to upload image -->
+       <div class="mb-3 text-center">
+         <img width="120" height="120" class="margin-top mat-elevation-z1"
+         [src]="url" alt = "profile" />
+     </div> 
+     <!-- <input #inputField hidden type="file" (change)="onFileSelect($event)" /> -->
+     <mat-icon (click)="inputField.click()" id="icon">add_a_photo</mat-icon>
+     <input #inputField hidden type="file" (change)="onFileSelect($event)" formControlName="profile" />
+ 
+     <!-- defining field to add full name -->
+     <mat-form-field class = "formField">
+      <input type="text" formControlName = "fullname" name="fullname" matInput placeholder="Your Name" [(ngModel)]="users.fullname">
+      <mat-error *ngIf = "fullname?.errors?.['required']">
+         Name Can't Be Blanked
+       </mat-error>
+     </mat-form-field>
+ 
+     <!-- defining field to add email -->
+      <mat-form-field class = "formField">
+      <input type="text" formControlName = "email" name = "email" matInput placeholder="Your Email Id" [(ngModel)]="users.email">
+      <mat-error *ngIf = "email?.errors?.['required']">
+         Email Can't Be Blank
+         </mat-error>
+     </mat-form-field>
+     <div>
+         <mat-error *ngIf = "email?.errors?.['pattern']">
+          Please Provide Your Valid Email Id
+         </mat-error>
+         </div>
+ 
+      <!-- defining field to add contact number    -->
+     <mat-form-field class = "formField">
+         <input type="number" formControlName = "contact" name = "contact" matInput placeholder="Your Contact No" [(ngModel)]="users.contact">
+         <mat-error *ngIf = "contact?.errors?.['required']">
+            Contact No Can't Be Blank
+            </mat-error>
+        </mat-form-field>
+        <div>
+         <mat-error *ngIf = "contact?.errors?.['pattern']">
+            Please provide Valid Contact Number contains 10 digits starting with 7/8/9
+         </mat-error>
+         </div>
+ 
+      <!-- defining field to add password    -->
+
+      <!-- button to submit and reset sign in form    -->
+     <div class = "text-center">
+      <button mat-raised-button color = "primary" type="submit" [disabled]="!Update.valid">Update</button>
+      <button mat-raised-button mat-dialog-close color = "accent" class = "resetBtn" type="reset">Reset</button>
+     </div>
+ </form>
+ </mat-card>
+ </div>
+ </section>
+ 
+ 
+

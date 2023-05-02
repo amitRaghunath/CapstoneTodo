@@ -1,0 +1,411 @@
+/* responsiveness for xsmall devices */
+:host.XSmall .priority-div{
+    margin: 20px auto;
+    width: 100%;
+}
+
+:host.XSmall .priorityBtn{
+    margin: 10px;
+}
+
+:host.XSmall .section{
+    margin:auto;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+:host.XSmall .todo-container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.XSmall .container-heading{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    height: 100%;
+}
+
+:host.XSmall .main-container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    display: block;
+}
+
+:host.XSmall .common-div{
+    margin:20px auto;
+    padding: auto;
+    width: 90%;
+}
+
+:host.XSmall .priority-div .priorityBtn{
+    z-index: 0;
+}
+
+
+
+:host.XSmall .menu-class{
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .showing-menu-div{
+   margin: auto;
+   padding: auto;
+   width: 100%;
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: flex-end;
+   position: absolute;
+   margin-top: 30px;
+}
+
+:host.XSmall .pagination-div{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+:host.XSmall .pagination-div mat-paginator{
+    margin: auto;
+    padding: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+:host.XSmall .welcome-div{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .cube-box{
+    width: 50%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.XSmall .welcome-div h1{
+    width: 80%;
+    margin: auto;
+    padding: auto;
+}
+
+
+
+/* responsiveness for small devices */
+
+:host.small .menu-class{
+    margin: auto;
+    padding: auto;
+}
+
+
+:host.small .showing-menu-div{
+   margin: auto;
+   padding: auto;
+   width: 100%;
+   text-align: right;
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: flex-end;
+   position: absolute;
+   margin-top: 30px;
+}
+
+
+:host.small .section{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.small .priority-div .priorityBtn{
+    z-index: 0;
+}
+
+:host.small .todo-container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.small .container-heading{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+    height: 100%;
+}
+
+:host.small .main-container{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.small .common-div{
+    margin:auto;
+    padding: 10px;
+    width: 90%;
+}
+
+
+
+:host.small .pagination-div{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+:host.small .pagination-div mat-paginator{
+    margin:auto;
+    padding: auto;
+    font-size: 1rem;
+    width: 100%;
+}
+
+:host.small .welcome-div{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .welcome-div{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+:host.small .cube-box{
+    width: 50%;
+    margin: auto;
+    padding: auto;
+}
+
+
+
+.container-heading{
+    height: 100%;
+}
+
+.main-container{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 40px;
+ }
+
+ /* comming div for all priority label todos */
+ .common-div{
+    width:350px;
+    margin: 20px;
+}
+
+.priority-div h1{
+    margin-left: 20px;
+}
+ 
+ .common-div a{
+    text-decoration: none;
+}
+
+/* defining search component details   */
+.search-component{
+    margin-top: -70px;
+    margin-left: 300px;
+}
+
+
+/* todos having high priority this div will render */
+
+.highPrDiv{
+ background: rgb(236, 141, 141);
+ padding: 10px;
+}
+
+/* todos having medium priority this div will render */
+
+.mediumPrDiv{
+    background: rgb(230, 243, 115);
+    padding: 10px;
+}
+
+/* todos having low priority this div will render */
+
+.lowPrDiv{
+   background: rgb(128, 224, 108);
+    padding: 10px;
+}
+
+.due-date-div{
+    height: 30px;
+}
+
+/* todos having no priority this div will render */
+
+.no-priority{
+    background: rgb(232, 195, 144);
+    padding: 10px;
+}
+
+
+
+/* heading to show due date of todos */
+.showing-duedate-h5{
+  color: gray;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-top: -15px;
+  margin-left: 25px;
+}
+
+/* heading to show title of todos */
+
+.todo-title-h5{
+    font-weight: 500;
+    color: var(--dark-gray);
+    margin-left: 25px;
+}
+
+/* paragraph to showing todos description */
+
+.todo-para{
+    font-weight: 500;
+    color:var(--dark-gray);
+    margin-top: -10px;
+    margin-left: 25px;
+}
+
+/* styling radio button */
+
+.radio-button{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+/* styling menu option */
+
+.menu-class{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: -16px;
+    color:rgb(49, 47, 47);
+}
+ 
+.priorityBtn{
+    width: 100px;
+    margin-left: 20px;
+    color:var(--dark-gray);
+}
+
+#all-btn{
+    background: var(--dark-gray);
+    color:white;
+}
+
+#high-btn{
+    background: rgb(236, 141, 141)
+}
+
+#medium-btn{
+    background: rgb(230, 243, 115)
+}
+
+#low-btn{
+    background: rgb(128, 224, 108)
+}
+
+.pagination-div{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+}
+
+.pagination-div mat-paginator{
+    width: 100%;
+    margin: auto;
+    background:transparent;
+    font-size: 1.2rem;
+    margin-left: 180px;
+}
+
+/* welcome div if user isn't having any todos */
+
+.welcome-div{
+    margin-top:10px;
+    margin-left: 350px;
+    width: 600px;
+}
+ 
+.welcome-div .cube-box{
+    margin-top: 155px;
+    margin-left: 50px;
+}
+
+.menu-div{
+    color: var(--dark-gray);
+}
+
+
+/* Creating Cube Box */
+
+.cube-box{
+    width: 200px;
+    height: 200px;
+    transform-style:preserve-3d;
+}
+
+.cube-box img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.8;
+  transition: 0.5s;
+  object-fit: cover;
+}
+
+
+.cube-box img:nth-child(1){
+    transform: rotateY(0deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(2){
+    transform: rotateY(90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(3){
+    transform: rotateY(180deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(4){
+    transform: rotateY(-90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(5){
+    transform: rotateX(90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(6){
+    transform: rotateX(-90deg) translateZ(var(--deft));
+}
+
+.cube-box{
+    animation: loops 10s linear infinite;
+}
+
+.cube-box:hover{
+    --deft:200px;
+    animation-play-state: paused;
+}
+
+@keyframes loops{
+    0%{ transform: rotateX(0deg) rotateY(0deg); }
+    100%{ transform: rotateX(360deg) rotateY(360deg); }
+}

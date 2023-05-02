@@ -1,0 +1,95 @@
+<!-- main container -->
+<div class="container">
+
+   <!-- card which is holding registration form -->
+    <mat-card class = "myCard">
+       
+    <form [formGroup] = "signInForm" >
+        
+        <!-- defining field to upload image -->
+    <div class="mb-3 text-center">
+        <img width="120" height="120" class="margin-top mat-elevation-z1"
+        [src]="url" alt = "profile" />
+    </div> 
+    <!-- <input #inputField hidden type="file" (change)="onFileSelect($event)" /> -->
+    <mat-icon (click)="inputField.click()" id="icon">add_a_photo</mat-icon>
+    <input #inputField hidden type="file" (change)="onFileSelect($event)" formControlName="profile" />
+
+    <!-- defining field to add full name -->
+    <mat-form-field class = "formField">
+     <input type="text" formControlName = "fullname" name="fullname" matInput placeholder="Your Name">
+     <mat-error *ngIf = "fullname?.errors?.['required']">
+        Name Can't Be Blanked
+      </mat-error>
+    </mat-form-field>
+
+    <!-- defining field to add email -->
+     <mat-form-field class = "formField">
+     <input type="text" formControlName = "email" name = "email" matInput placeholder="Your Email Id" #emailid (input) = "checkEmail(emailid.value)">
+     <button click-stop-propogation (click) = "sentOtp(emailid.value)" [class.hide-otp-button] = "hidebutton" mat-button [disabled] = "!email?.valid" 
+      class = "sent-otp-link" matSuffix appClickEventPropogation >Send Otp</button>
+     <mat-error *ngIf = "email?.errors?.['required']">
+        Email Can't Be Blank
+        </mat-error>
+        <mat-error *ngIf = "email?.errors?.['email']">
+            Please Provide Your Valid Email Id
+        </mat-error>
+        <mat-error *ngIf = "email?.errors?.['invalidEmail']">
+            Please Provide Your Proper Email Id
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance = "outline" *ngIf = "showOtpField" class = "otp-input-field">
+        <input type="number" matInput placeholder="Provide Otp"
+         #otp (input) = "verifyOtp(otp.value)">
+    </mat-form-field>
+  
+     <!-- defining field to add contact number    -->
+     <div *ngIf="openForm">
+    <mat-form-field class = "formField">
+        <input type="number" formControlName = "contact" name = "contact" matInput placeholder="Your Contact No" >
+        <mat-error *ngIf = "contact?.errors?.['required']">
+           Contact No Can't Be Blank
+        </mat-error>
+       </mat-form-field>
+       <div>
+        <mat-error *ngIf = "contact?.errors?.['pattern']">
+           Please provide Valid Contact Number contains 10 digits starting with 7/8/9
+        </mat-error>
+        </div>
+
+     <!-- defining field to add password    -->
+    <mat-form-field class = "formField">
+     <input type="password" matInput formControlName = "password" name = "password" placeholder="Your Password" [disabled] = "!otp1">
+     <mat-error *ngIf = "password?.errors?.['required']">
+        Password Required
+        </mat-error>
+    </mat-form-field>
+    <div>
+        <mat-error *ngIf = "password?.errors?.['pattern']">
+            Password Should Have min 5 letter password, with atlease a symbol a upper and lower case letters and a number 
+        </mat-error>
+    </div>
+
+   <!-- defining field to add confirm password -->
+    <mat-form-field class = "formField">
+     <input type="password" matInput formControlName = "confirmPassword" name = "confirmPassword" placeholder="Re-enter Password" [disabled] = "!otp1">
+     <mat-error *ngIf = "confirmPassword?.errors?.['required']">
+        Confirm Password is Required
+    </mat-error>
+    </mat-form-field>
+        <div>
+        <mat-error *ngIf = "signInForm?.errors?.['mustMatch']===true">
+            password and confirm password should match
+        </mat-error>
+        </div>
+    </div>
+     <!-- button to submit and reset sign in form    -->
+    <div class = "text-center">
+     <button mat-raised-button color = "primary" type="submit" [disabled]="!signInForm.valid "  (click)="onSubmit()">Register !!</button>
+     <button mat-raised-button mat-dialog-close color = "accent" class = "resetBtn" type="reset">Close</button>
+    </div>
+</form>
+</mat-card>
+</div>
+

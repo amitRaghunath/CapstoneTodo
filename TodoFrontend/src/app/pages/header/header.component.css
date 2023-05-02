@@ -1,0 +1,339 @@
+/* css to make responsive header in small devices */
+:host.small .header{
+  width: 100%;
+  height: 90px;
+  background: var(--dark-gray); 
+  position: fixed;
+  z-index: 2;
+}
+
+ :host.small .header .menu{
+  position: fixed;
+  width: 280px;
+  height: 100%;
+  top: 90px;
+  left: -280px;
+  background: var(--dark-gray);
+  transition: 0.4s ease-in-out;
+}
+
+:host.small .header .logo img{
+  width: 80px;
+  height: 80px;
+}
+
+
+:host.small .header .menu ul{
+ display: block;
+}
+
+:host.small .header .menu ul li{
+  margin: 0;
+ padding:10px 0px 10px 26px;
+ border-bottom: 1px solid gray;
+}
+
+:host.small .header .menu_icon span{
+   width: 32px;
+   height: 3px;
+   display: block;
+   background: white;
+   transition: 0.2s ease-in-out;
+   margin-left: 30px;
+}
+
+:host.small .header .menu_icon span:nth-child(2){
+   margin:4px 0;
+   margin-left: 30px;
+}
+
+:host.small .header .menuClass{
+   left: 0;
+   transition: 0.4s ease-in-out;
+}
+
+:host.small .header .menu_icon_class span:nth-child(2){
+  display: none;
+}
+
+:host.small .header .menu_icon_class span:nth-child(1){
+  transform: rotate(40deg);
+}
+
+:host.small .header .menu_icon_class span:nth-child(3){
+  transform: rotate(-40deg);
+  margin-top: -3px;
+}
+
+
+/* responsiveness for medium devices */
+
+:host.medium .header .menu{
+  position: fixed;
+  width: 280px;
+  height: 100%;
+  top: 90px;
+  left: -280px;
+  background: var(--dark-gray);
+  transition: 0.4s ease-in-out;
+}
+
+:host.medium .header .menu ul{
+ display: block;
+}
+
+:host.medium .header .menu ul li{
+  margin: 0;
+ padding:10px 0px 10px 26px;
+ border-bottom: 1px solid gray;
+}
+
+:host.medium .header .menu_icon span{
+   width: 32px;
+   height: 3px;
+   display: block;
+   background: white;
+   transition: 0.2s ease-in-out;
+   margin-left: 30px;
+}
+
+:host.medium .header .menu_icon span:nth-child(2){
+   margin:4px 0;
+   margin-left: 30px;
+}
+
+:host.medium .header .menuClass{
+   left: 0;
+   transition: 0.4s ease-in-out;
+}
+
+:host.medium .header .menu_icon_class span:nth-child(2){
+  display: none;
+}
+
+:host.medium .header .menu_icon_class span:nth-child(1){
+  transform: rotate(40deg);
+}
+
+:host.medium .header .menu_icon_class span:nth-child(3){
+  transform: rotate(-40deg);
+  margin-top: -3px;
+}
+
+:host.medium .header .logo img{
+  width: 80px;
+  height: 80px;
+}
+
+/* responsiveness for x-small devices */
+
+:host.XSmall .header{
+   width: 100%;
+   z-index: 2;
+}
+
+:host.XSmall .header .logo{
+   margin-left: -60px;
+}
+
+:host.XSmall .header{
+  width: 100%;
+}
+
+
+:host.XSmall .header .menu{
+  position: fixed;
+  width: 280px;
+  height: 100%;
+  top: 90px;
+  left: -280px;
+  background: var(--dark-gray);
+  transition: 0.4s ease-in-out;
+}
+
+:host.XSmall .header .menu ul{
+ display: block;
+}
+
+:host.XSmall .header .menu ul li{
+  margin: 0;
+ padding:10px 0px 10px 26px;
+ border-bottom: 1px solid gray;
+}
+
+:host.XSmall .header .menu_icon span{
+   width: 32px;
+   height: 3px;
+   display: block;
+   background: white;
+   transition: 0.2s ease-in-out;
+   margin-left: 10px;
+}
+
+:host.XSmall .header .menu_icon span:nth-child(2){
+   margin:4px 0;
+   margin-left: 10px;
+}
+
+:host.XSmall .header .menuClass{
+   left: 0;
+   transition: 0.4s ease-in-out;
+}
+
+:host.XSmall .header .menu_icon_class span:nth-child(2){
+  display: none;
+}
+
+:host.XSmall .header .menu_icon_class span:nth-child(1){
+  transform: rotate(40deg);
+}
+
+:host.XSmall .header .menu_icon_class span:nth-child(3){
+  transform: rotate(-40deg);
+  margin-top: -3px;
+}
+
+:host.XSmall .header .logo img{
+  width: 70px;
+  height: 70px;
+}
+
+:host.XSmall .name-span{
+  display: none;
+}
+
+:host.XSmall .profile{
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+:host.small .profile{
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+
+
+.example-spacer{
+    flex: 1 1 0;
+}
+.header{
+    width: 100%;
+    height: 90px;
+    background: var(--dark-gray); 
+    position: fixed;
+    z-index: 3;
+    top:0;
+  }
+  
+  .header .menu ul{
+    display: flex;
+  }
+  
+    .header .menu ul{
+    margin-top: 15px;
+  }
+  
+    .header .menu ul li a{
+    text-decoration: none;
+    color:white;
+    cursor: pointer;
+  }
+  
+  
+  .logo img{
+    width: 80px;
+    height: 80px;
+    margin-left: 50px;
+    margin-top: 5px;
+    border-radius: 50%;
+  }
+  
+  .example-spacer{
+      flex: 1 1 0;
+  }
+     
+  .profile{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+  }
+  .userName{
+      text-decoration: none;
+      color:black;
+  }
+  
+   .mylink{
+      cursor: pointer;
+   }
+  
+   .name-span{
+      margin-right: 20px;
+      color: white;
+      font-weight: 400;
+      font-size: 20px;
+   }
+  
+   .menu-option-header
+   {
+     width: 500px;
+   }
+  
+   /* styling button */
+    .toggle-button {
+      padding: 0;
+      margin: 0 20px;
+      border: none;
+      background: none;
+    }
+    
+    .toggle-button {
+      --primary-color: white;
+      --hovered-color: rgb(205, 197, 197);
+      position: relative;
+      display: flex;
+      font-weight: 400;
+      font-size: 1em;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    
+     .toggle-button p {
+      margin: 0;
+      position: relative;
+      font-size: 1em;
+      color: var(--primary-color)
+    }
+    
+    .toggle-button::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      left: 0;
+      bottom: -7px;
+      background: var(--hovered-color);
+      height: 2px;
+      transition: 0.3s ease-out;
+    }
+    
+    .toggle-button p::before {
+      position: absolute;
+      width: 0%;
+      inset: 0;
+      color: var(--hovered-color);
+      overflow: hidden;
+      transition: 0.3s ease-out;
+    }
+    .toggle-button p:hover{
+      color:rgb(205, 197, 197);
+    }
+    
+   .toggle-button:hover::after {
+      width: 100%;
+    }
+    
+    .toggle-button:hover p::before {
+      width: 100%;
+    }

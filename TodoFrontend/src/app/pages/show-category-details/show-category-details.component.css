@@ -1,0 +1,175 @@
+.main-container{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 460px;
+ }
+
+ .pagination-div mat-paginator{
+    width: 600px;
+    margin: auto;
+    background:transparent;
+    font-size: 1.2rem;
+}
+
+/* comming div for all priority label todos */
+.common-div{
+    width:350px;
+    margin: 20px;
+}
+ 
+ .common-div a{
+    text-decoration: none;
+}
+
+/* todos having high priority this div will render */
+
+.highPrDiv{
+    background: rgb(236, 141, 141);
+    margin-top: 5px;
+    padding: 10px;
+   }
+
+/* todos having medium priority this div will render */
+
+.mediumPrDiv{
+    background: rgb(230, 243, 115);
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.due-date-div{
+    height: 30px;
+}
+
+/* todos having low priority this div will render */
+
+.lowPrDiv{
+    background: rgb(128, 224, 108);
+    margin-top: 5px;
+     padding: 10px;
+ }
+
+/* todos having no priority this div will render */
+
+.no-priority{
+    background: rgb(245, 236, 223);
+    margin-top: 5px;
+    padding: 10px;
+}
+
+/* heading to show due date of todos */
+.showing-duedate-h5{
+    color: gray;
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin-top: -15px;
+    margin-left: 25px;
+  }
+  
+/* heading to show title of todos */
+
+.todo-title-h5{
+    font-weight: 500;
+    color: var(--dark-gray);
+    margin-left: 25px;
+}
+
+
+/* paragraph to showing todos description */
+
+.todo-para{
+    font-weight: 500;
+    color:var(--dark-gray);
+    margin-top: -10px;
+    margin-left: 25px;
+}
+
+/* styling radio button */
+
+.radio-button{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+/* styling menu option */
+
+.menu-class{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: -16px;
+    color:rgb(49, 47, 47);
+}
+
+/* welcome div if user isn't having any todos */
+
+.welcome-div{
+    margin-top:10px;
+    margin-left: 400px;
+    width: 600px;
+}
+ 
+.welcome-div .cube-box{
+    margin-top: 155px;
+    margin-left:50px;
+}
+
+
+/* Creating Cube Box */
+
+.cube-box{
+    width: 200px;
+    height: 200px;
+    transform-style:preserve-3d;
+}
+
+.cube-box img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.8;
+  transition: 0.5s;
+  object-fit: cover;
+}
+
+
+.cube-box img:nth-child(1){
+    transform: rotateY(0deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(2){
+    transform: rotateY(90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(3){
+    transform: rotateY(180deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(4){
+    transform: rotateY(-90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(5){
+    transform: rotateX(90deg) translateZ(var(--deft));
+}
+
+.cube-box img:nth-child(6){
+    transform: rotateX(-90deg) translateZ(var(--deft));
+}
+
+.cube-box{
+    animation: loops 10s linear infinite;
+}
+
+.cube-box:hover{
+    --deft:200px;
+    animation-play-state: paused;
+}
+
+@keyframes loops{
+    0%{ transform: rotateX(0deg) rotateY(0deg); }
+    100%{ transform: rotateX(360deg) rotateY(360deg); }
+}

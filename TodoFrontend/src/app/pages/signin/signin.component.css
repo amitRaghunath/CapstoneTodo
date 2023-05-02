@@ -1,0 +1,120 @@
+/* 
+
+.myCard{
+    width: 440px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+
+.formField{
+    width: 400px;
+    background-color: white;
+}
+
+
+.resetBtn{
+    margin-left: 10px;
+}
+
+
+.icon{
+    margin-top: 105px;
+}
+
+#icon{
+    position: absolute;
+    margin-left: 235px;
+    margin-top: -40px;
+    color: black;
+}
+  */
+  :host.XSmall .myCard{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.XSmall .myCard .formField{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+:host.small .myCard{
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+
+:host.small .myCard .formField{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.spacer{
+    flex: 1 1 0;
+}
+/* styling card which is holding registration form */
+.myCard{
+    width: 440px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/* setting width and height of registraiton form */
+.formField{
+    width: 400px;
+    background-color: white;
+}
+
+/* styling reset button */
+.resetBtn{
+    margin-left: 10px;
+}
+
+/* setting margin to add profile icon */
+.icon{
+    margin-top: 105px;
+}
+
+
+.select-pic-icon{
+    position: absolute;
+    text-align: right;
+    width: 64%;
+    z-index: 1;
+    margin-top: -38px;
+}
+ 
+.forgot-btn button{
+    background: rgb(209, 209, 21);
+    color:white;
+}
+
+.btn-div{
+    display: flex;
+}
+
+.verify-otp-btn{
+    margin-left: 10px;
+}
+
+
+
+.sent-otp-link{
+    color:white;
+    background: rgb(203, 203, 16);
+    border-radius: 7px;
+    margin-right: 5px;
+    height: 30px;
+    display: none;
+}
+
+.hide-otp-button{
+    display: block;
+}
+ 
+ 
+ 
